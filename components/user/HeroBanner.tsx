@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const heroBanners = [
   {
@@ -97,7 +97,7 @@ export default function HeroBanner() {
 
   return (
     <div
-      className="relative w-full bg-[#111111] overflow-hidden min-h-[460px] sm:min-h-[520px] lg:min-h-[600px] flex items-center shadow-lg"
+      className="relative w-full bg-[#111111] overflow-hidden min-h-[480px] sm:min-h-[540px] lg:min-h-[620px] flex items-center shadow-lg"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
@@ -129,51 +129,41 @@ export default function HeroBanner() {
               <div
                 className={`absolute inset-0 bg-gradient-to-r ${banner.bgGradient}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/25" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
             </div>
 
-            {/* Banner Content Layout - Aligned inside Max Width Container */}
-            <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 flex items-center">
-              <div className="w-full max-w-2xl text-white py-12 sm:py-16 pl-10 sm:pl-14 lg:pl-12 pr-4 space-y-4 sm:space-y-6">
-                {/* Top Eyebrow Tag */}
-                <div className="flex items-center gap-2.5">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-white/15 backdrop-blur-md rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-[0.22em] text-white/95 border border-white/20 shadow-xs">
-                    <Sparkles className="w-3.5 h-3.5 text-[#D84A26]" />
-                    <span>{banner.brand}</span>
-                  </span>
-                  <span className="hidden xs:inline-block px-3 py-1 bg-[#D84A26] rounded-full text-[10px] font-bold uppercase tracking-wider text-white shadow-xs">
-                    {banner.tag}
-                  </span>
-                </div>
-
+            {/* Banner Content Layout - Positioned on Down Side (Bottom-aligned) */}
+            <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 sm:px-10 lg:px-16 flex items-end pb-12 sm:pb-14 lg:pb-16">
+              <div className="w-full max-w-2xl text-white pt-6 pb-2 pl-1 sm:pl-8 lg:pl-10 pr-2 space-y-3 sm:space-y-5">
+                
                 {/* Headline & Description */}
-                <div className="space-y-3 sm:space-y-4">
-                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white leading-[1.08] drop-shadow-md">
+                <div className="space-y-2 sm:space-y-4">
+                  <h1 className="font-serif text-2xl sm:text-4xl lg:text-6xl font-normal tracking-tight text-white leading-tight drop-shadow-md">
                     {banner.headline}
                   </h1>
 
-                  <p className="text-xs sm:text-base text-gray-200 max-w-lg lg:max-w-xl leading-relaxed font-light drop-shadow-sm">
+                  <p className="text-[11px] sm:text-base text-gray-200 max-w-md lg:max-w-xl leading-relaxed font-light drop-shadow-sm line-clamp-3 sm:line-clamp-none">
                     {banner.subtitle}
                   </p>
 
-                  <div className="text-[11px] font-mono tracking-wider text-white/70 uppercase pt-1">
+                  <div className="text-[10px] sm:text-[11px] font-mono tracking-wider text-white/70 uppercase pt-0.5 sm:pt-1">
                     Formula: <span className="text-white font-semibold">{banner.concentration}</span>
                   </div>
                 </div>
 
                 {/* CTAs */}
-                <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+                <div className="pt-1.5 sm:pt-4 flex flex-wrap items-center gap-2.5 sm:gap-4">
                   <Link
                     href={banner.link}
-                    className="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#D84A26] hover:bg-[#bf3e1d] text-white text-xs font-bold tracking-widest uppercase rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-8 py-2.5 sm:py-4 bg-[#D84A26] hover:bg-[#bf3e1d] text-white text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest uppercase rounded-lg sm:rounded-xl transition-all shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
                   >
                     <span>{banner.ctaText}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
                   <Link
                     href="/shop"
-                    className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-xs font-semibold tracking-wider uppercase rounded-xl border border-white/25 transition-all"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-6 py-2.5 sm:py-4 bg-white/15 hover:bg-white/25 backdrop-blur-md text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase rounded-lg sm:rounded-xl border border-white/25 transition-all"
                   >
                     <span>View All Fragrances</span>
                   </Link>
@@ -184,23 +174,27 @@ export default function HeroBanner() {
         );
       })}
 
-      {/* Left Navigation Arrow */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/45 hover:bg-black/80 backdrop-blur-md text-white flex items-center justify-center border border-white/20 transition-all hover:scale-105 shadow-xl"
-        aria-label="Previous fragrance banner"
-      >
-        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
 
-      {/* Right Navigation Arrow */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/45 hover:bg-black/80 backdrop-blur-md text-white flex items-center justify-center border border-white/20 transition-all hover:scale-105 shadow-xl"
-        aria-label="Next fragrance banner"
-      >
-        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
-      </button>
+
+      {/* Slide Pagination Dots at bottom of banner */}
+      <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-2">
+        {heroBanners.map((_, index) => {
+          const isActive = currentSlide === index;
+          return (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`transition-all duration-300 rounded-full h-2 ${
+                isActive
+                  ? 'w-7 bg-[#D84A26] shadow-sm'
+                  : 'w-2 bg-white/40 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
+

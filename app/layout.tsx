@@ -26,6 +26,16 @@ export const metadata: Metadata = {
     description: 'Artisanal French fragrances distilled to perfection.',
     siteName: 'frenchperfume.ind',
   },
+  icons: {
+    icon: [
+      { url: '/logo.jpeg', type: 'image/jpeg' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/logo.jpeg' },
+    ],
+    shortcut: ['/logo.jpeg'],
+  },
 };
 
 export default function RootLayout({
