@@ -19,10 +19,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#111111] text-[#FAF8F5] pt-16 pb-12 border-t border-black">
+    <footer className="bg-[#111111] text-[#FAF8F5] pt-12 sm:pt-16 pb-8 sm:pb-12 border-t border-black">
       {/* Brand Value Pillars / Perks Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 border-b border-white/10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="flex items-start gap-4">
             <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[#D84A26] shrink-0">
               <Award className="w-6 h-6" />
@@ -82,8 +82,8 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Links & Newsletter */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
           {/* Brand Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block group mb-3">

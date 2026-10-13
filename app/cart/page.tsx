@@ -102,10 +102,10 @@ export default function CartPage() {
                   {cart.map((item) => (
                     <div
                       key={`${item.productId}-${item.selectedSize}`}
-                      className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#FAF8F5]/50 transition-colors"
+                      className="p-3.5 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 hover:bg-[#FAF8F5]/50 transition-colors"
                     >
-                      <div className="flex items-center gap-4">
-                        <div className="relative w-20 h-24 bg-[#FAF8F5] rounded-xl overflow-hidden border border-[#EEEBE6] shrink-0">
+                      <div className="flex items-start sm:items-center gap-3 sm:gap-4">
+                        <div className="relative w-16 h-20 sm:w-20 sm:h-24 bg-[#FAF8F5] rounded-xl overflow-hidden border border-[#EEEBE6] shrink-0">
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -114,44 +114,44 @@ export default function CartPage() {
                             sizes="80px"
                           />
                         </div>
-                        <div>
+                        <div className="min-w-0 flex-1">
                           <Link
                             href={`/product/${item.productId}`}
-                            className="text-base font-serif font-medium text-black hover:text-[#C5A880] transition-colors"
+                            className="text-sm sm:text-base font-serif font-medium text-black hover:text-[#C5A880] transition-colors truncate block"
                           >
                             {item.name}
                           </Link>
-                          <p className="text-xs text-gray-500 italic">{item.frenchName}</p>
-                          <div className="mt-1 text-xs text-gray-600 font-mono">
+                          <p className="text-[11px] sm:text-xs text-gray-500 italic truncate">{item.frenchName}</p>
+                          <div className="mt-1 text-[11px] sm:text-xs text-gray-600 font-mono">
                             Flacon: <span className="font-semibold text-black">{item.selectedSize}</span> · {item.concentration}
                           </div>
-                          <div className="text-xs text-gray-400 mt-0.5">
+                          <div className="text-[11px] sm:text-xs text-gray-400 mt-0.5">
                             Unit Price: ₹{item.price.toLocaleString('en-IN')}
                           </div>
                         </div>
                       </div>
 
                       {/* Quantity & Item Total */}
-                      <div className="flex items-center justify-between sm:justify-end gap-6 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
+                      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-6 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100">
                         {/* Stepper */}
                         <div className="flex items-center border border-[#EEEBE6] rounded-xl overflow-hidden bg-white">
                           <button
                             onClick={() => updateCartQuantity(item.productId, item.selectedSize, item.quantity - 1)}
-                            className="px-3 py-2 text-gray-600 hover:text-black hover:bg-gray-100"
+                            className="px-2.5 sm:px-3 py-1.5 sm:py-2 text-gray-600 hover:text-black hover:bg-gray-100"
                           >
                             <Minus className="w-3 h-3" />
                           </button>
-                          <span className="px-3 text-xs font-semibold">{item.quantity}</span>
+                          <span className="px-2 sm:px-3 text-xs font-semibold">{item.quantity}</span>
                           <button
                             onClick={() => updateCartQuantity(item.productId, item.selectedSize, item.quantity + 1)}
-                            className="px-3 py-2 text-gray-600 hover:text-black hover:bg-gray-100"
+                            className="px-2.5 sm:px-3 py-1.5 sm:py-2 text-gray-600 hover:text-black hover:bg-gray-100"
                           >
                             <Plus className="w-3 h-3" />
                           </button>
                         </div>
 
-                        <div className="text-right min-w-[90px]">
-                          <span className="text-base font-semibold text-black">
+                        <div className="text-right min-w-[70px] sm:min-w-[90px]">
+                          <span className="text-sm sm:text-base font-semibold text-black">
                             ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                           </span>
                         </div>

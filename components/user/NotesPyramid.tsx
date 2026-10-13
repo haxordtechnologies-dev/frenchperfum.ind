@@ -38,22 +38,22 @@ export default function NotesPyramid() {
   const [activeTier, setActiveTier] = useState(1);
 
   return (
-    <section className="py-20 bg-white border-b border-[#EEEBE6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+    <section className="py-12 sm:py-20 bg-white border-b border-[#EEEBE6]">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#FAF8F5] border border-[#EEEBE6] rounded-full text-xs font-semibold uppercase tracking-widest text-[#C5A880] mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Science of Olfaction</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif text-[#111111] leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#111111] leading-tight">
             The Three-Tiered French Olfactory Pyramid
           </h2>
-          <p className="text-xs sm:text-sm text-gray-500 mt-3 leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-500 mt-2.5 sm:mt-3 leading-relaxed">
             Every bottle from frenchperfume.ind evolves dynamically on your skin over hours, revealing sequential layers of hand-extracted botanicals.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
           {noteLayers.map((layer, idx) => {
             const Icon = layer.icon;
             const isSelected = activeTier === idx;
@@ -61,9 +61,9 @@ export default function NotesPyramid() {
               <div
                 key={layer.tier}
                 onClick={() => setActiveTier(idx)}
-                className={`cursor-pointer rounded-2xl p-6 sm:p-8 border transition-all duration-300 relative flex flex-col justify-between ${
+                className={`cursor-pointer rounded-2xl p-5 sm:p-8 border transition-all duration-300 relative flex flex-col justify-between ${
                   isSelected
-                    ? 'border-black bg-[#FAF8F5] shadow-xl scale-[1.02]'
+                    ? 'border-black bg-[#FAF8F5] shadow-xl md:scale-[1.02]'
                     : 'border-[#EEEBE6] bg-white hover:border-gray-400'
                 }`}
               >

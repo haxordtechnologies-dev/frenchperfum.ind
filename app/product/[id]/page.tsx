@@ -114,18 +114,18 @@ function ProductDetailContent() {
         </div>
 
         {/* Top Product Presentation */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 sm:pt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             {/* Gallery Left (7 Cols) */}
-            <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-4">
+            <div className="lg:col-span-7 flex flex-col-reverse md:flex-row gap-3 sm:gap-4">
               {/* Thumbnails */}
-              <div className="flex md:flex-col gap-3 overflow-x-auto md:overflow-visible shrink-0 pb-2 md:pb-0">
+              <div className="flex md:flex-col gap-2 sm:gap-3 overflow-x-auto md:overflow-visible shrink-0 pb-1 md:pb-0 scrollbar-none">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
                     type="button"
                     onClick={() => setSelectedImage(img)}
-                    className={`relative w-20 h-24 rounded-xl overflow-hidden border-2 transition-all bg-[#FAF8F5] shrink-0 ${
+                    className={`relative w-16 h-20 sm:w-20 sm:h-24 rounded-xl overflow-hidden border-2 transition-all bg-[#FAF8F5] shrink-0 ${
                       selectedImage === img
                         ? 'border-black ring-1 ring-black shadow-md'
                         : 'border-[#EEEBE6] hover:border-gray-400 opacity-80 hover:opacity-100'
@@ -143,7 +143,7 @@ function ProductDetailContent() {
               </div>
 
               {/* Main Image View */}
-              <div className="flex-1 relative aspect-4/5 md:aspect-square bg-[#FAF8F5] rounded-3xl overflow-hidden border border-[#EEEBE6] shadow-lg">
+              <div className="flex-1 relative aspect-4/5 md:aspect-square bg-[#FAF8F5] rounded-2xl sm:rounded-3xl overflow-hidden border border-[#EEEBE6] shadow-lg">
                 <Image
                   src={selectedImage || product.thumbnail}
                   alt={product.name}
@@ -155,8 +155,8 @@ function ProductDetailContent() {
 
                 {/* Badge */}
                 {product.badge && (
-                  <div className="absolute top-6 left-6 z-10">
-                    <span className="px-3 py-1.5 bg-[#111111] text-[#FAF8F5] text-xs font-semibold uppercase tracking-wider rounded-md shadow-md">
+                  <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-10">
+                    <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-[#111111] text-[#FAF8F5] text-[10px] sm:text-xs font-semibold uppercase tracking-wider rounded-md shadow-md">
                       {product.badge}
                     </span>
                   </div>
@@ -165,14 +165,14 @@ function ProductDetailContent() {
                 {/* Wishlist floating toggle */}
                 <button
                   onClick={() => toggleWishlist(product.id)}
-                  className={`absolute top-6 right-6 p-3 rounded-full backdrop-blur-md transition-all shadow-md z-10 ${
+                  className={`absolute top-3 right-3 sm:top-6 sm:right-6 p-2.5 sm:p-3 rounded-full backdrop-blur-md transition-all shadow-md z-10 ${
                     isWish
                       ? 'bg-white text-red-500'
                       : 'bg-white/80 hover:bg-white text-gray-700 hover:text-black'
                   }`}
                   aria-label="Wishlist"
                 >
-                  <Heart className={`w-5 h-5 ${isWish ? 'fill-current' : ''}`} />
+                  <Heart className={`w-4 h-4 sm:w-5 sm:h-5 ${isWish ? 'fill-current' : ''}`} />
                 </button>
               </div>
             </div>
@@ -608,12 +608,12 @@ function ProductDetailContent() {
 
         {/* Related Fragrances */}
         {relatedProducts.length > 0 && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-            <div className="border-t border-[#EEEBE6] pt-12">
-              <h3 className="text-2xl font-serif text-black mb-8 text-center sm:text-left">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-12 sm:pt-20">
+            <div className="border-t border-[#EEEBE6] pt-8 sm:pt-12">
+              <h3 className="text-xl sm:text-2xl font-serif text-black mb-6 sm:mb-8 text-center sm:text-left">
                 Complementary Olfactory Creations
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                 {relatedProducts.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}
@@ -621,6 +621,34 @@ function ProductDetailContent() {
             </div>
           </div>
         )}
+
+        {/* Sticky Mobile Buy Bar */}
+        <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t border-[#EEEBE6] px-4 py-2.5 z-30 flex items-center justify-between gap-3 shadow-2xl">
+          <div className="min-w-0">
+            <span className="text-[10px] text-gray-500 uppercase tracking-wider block font-mono truncate">
+              {selectedSize} · {product.concentration}
+            </span>
+            <span className="text-base font-semibold text-[#111111] leading-tight block">
+              ₹{activePrice.toLocaleString('en-IN')}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleAddToCart}
+              className="py-2.5 px-3.5 bg-[#4A0E17] hover:bg-[#360910] text-white text-[11px] font-semibold tracking-wider uppercase rounded-xl transition-colors flex items-center gap-1.5 shadow-xs"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Add</span>
+            </button>
+            <button
+              onClick={handleBuyNow}
+              className="py-2.5 px-4 bg-[#D84A26] hover:bg-[#bf3e1d] text-white text-[11px] font-semibold tracking-wider uppercase rounded-xl transition-colors shadow-sm"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
       </main>
 
       <Footer />

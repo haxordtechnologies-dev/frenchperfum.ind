@@ -91,11 +91,11 @@ export default function AccountPage() {
           </div>
         </div>
 
-        {/* Tab Controls */}
-        <div className="flex gap-2 border-b border-[#EEEBE6] pb-4 mb-8">
+        {/* Tab Controls (Horizontally Scrollable on Mobile) */}
+        <div className="flex gap-2 border-b border-[#EEEBE6] pb-3 sm:pb-4 mb-6 sm:mb-8 overflow-x-auto scrollbar-none">
           <button
             onClick={() => setActiveTab('orders')}
-            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+            className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
               activeTab === 'orders'
                 ? 'bg-black text-white shadow-xs'
                 : 'bg-white text-gray-600 hover:text-black border border-[#EEEBE6]'
@@ -107,7 +107,7 @@ export default function AccountPage() {
 
           <button
             onClick={() => setActiveTab('addresses')}
-            className={`px-5 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+            className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
               activeTab === 'addresses'
                 ? 'bg-black text-white shadow-xs'
                 : 'bg-white text-gray-600 hover:text-black border border-[#EEEBE6]'
@@ -119,7 +119,7 @@ export default function AccountPage() {
 
           <Link
             href="/wishlist"
-            className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:text-black border border-[#EEEBE6] transition-all flex items-center gap-2"
+            className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:text-black border border-[#EEEBE6] transition-all flex items-center gap-2 shrink-0"
           >
             <Heart className="w-4 h-4 text-red-500" />
             <span>Saved Fragrances ({wishlist.length})</span>

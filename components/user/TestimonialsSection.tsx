@@ -9,34 +9,34 @@ export default function TestimonialsSection() {
   const approvedReviews = reviews.filter((r) => r.approved);
 
   return (
-    <section className="py-20 bg-[#FAF8F5] border-b border-[#EEEBE6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <section className="py-12 sm:py-20 bg-[#FAF8F5] border-b border-[#EEEBE6]">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <div>
-            <div className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-[#C5A880] mb-2">
+            <div className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[#C5A880] mb-1.5 sm:mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Verified Patron Experiences</span>
             </div>
-            <h2 className="text-3xl font-serif text-[#111111]">
+            <h2 className="text-2xl sm:text-3xl font-serif text-[#111111]">
               Echoes of Elegance
             </h2>
           </div>
-          <div className="flex items-center gap-3 mt-4 md:mt-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 mt-3 md:mt-0 flex-wrap">
             <div className="flex text-amber-500">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-current" />
+                <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
               ))}
             </div>
-            <span className="text-sm font-semibold text-gray-900">4.92 / 5.0</span>
-            <span className="text-xs text-gray-500">• 850+ Verified Connoisseurs</span>
+            <span className="text-xs sm:text-sm font-semibold text-gray-900">4.92 / 5.0</span>
+            <span className="text-[11px] sm:text-xs text-gray-500">• 850+ Verified Connoisseurs</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {approvedReviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white p-6 rounded-2xl border border-[#EEEBE6] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow relative"
+              className="bg-white p-5 sm:p-6 rounded-2xl border border-[#EEEBE6] shadow-xs flex flex-col justify-between hover:shadow-md transition-shadow relative"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">

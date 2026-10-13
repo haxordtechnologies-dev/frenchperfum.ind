@@ -127,17 +127,17 @@ export default function CheckoutPage() {
         </div>
       </header>
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-        <form onSubmit={handlePlaceOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <main className="flex-1 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 w-full">
+        <form onSubmit={handlePlaceOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
           {/* Left Form: Shipping + Payment (7 Cols) */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
             {/* 1. Contact & Shipping Address */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#EEEBE6] shadow-xs">
-              <div className="flex items-center gap-2.5 mb-6 pb-4 border-b border-[#EEEBE6]">
+            <div className="bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#EEEBE6] shadow-xs">
+              <div className="flex items-center gap-2.5 mb-5 sm:mb-6 pb-3 sm:pb-4 border-b border-[#EEEBE6]">
                 <div className="w-7 h-7 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center font-serif">
                   1
                 </div>
-                <h2 className="text-lg font-serif font-medium text-black">
+                <h2 className="text-base sm:text-lg font-serif font-medium text-black">
                   Shipping Destination
                 </h2>
               </div>
@@ -245,12 +245,12 @@ export default function CheckoutPage() {
             </div>
 
             {/* 2. Payment Method Selector */}
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#EEEBE6] shadow-xs">
-              <div className="flex items-center gap-2.5 mb-6 pb-4 border-b border-[#EEEBE6]">
+            <div className="bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#EEEBE6] shadow-xs">
+              <div className="flex items-center gap-2.5 mb-5 sm:mb-6 pb-3 sm:pb-4 border-b border-[#EEEBE6]">
                 <div className="w-7 h-7 rounded-full bg-black text-white text-xs font-bold flex items-center justify-center font-serif">
                   2
                 </div>
-                <h2 className="text-lg font-serif font-medium text-black">
+                <h2 className="text-base sm:text-lg font-serif font-medium text-black">
                   Select Payment Method
                 </h2>
               </div>
@@ -384,8 +384,8 @@ export default function CheckoutPage() {
 
           {/* Right Order Review (5 Cols) */}
           <div className="lg:col-span-5">
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#EEEBE6] shadow-xs sticky top-28 space-y-6">
-              <h3 className="font-serif text-xl text-black">Order Review</h3>
+            <div className="bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-[#EEEBE6] shadow-xs sticky top-28 space-y-5 sm:space-y-6">
+              <h3 className="font-serif text-lg sm:text-xl text-black">Order Review</h3>
 
               {/* Items List */}
               <div className="divide-y divide-gray-100 max-h-64 overflow-y-auto pr-1">

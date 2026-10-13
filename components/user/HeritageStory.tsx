@@ -7,9 +7,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function HeritageStory() {
   return (
-    <section className="py-24 bg-white border-b border-[#EEEBE6] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="py-12 sm:py-24 bg-white border-b border-[#EEEBE6] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image composition */}
           <div className="relative">
             <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden shadow-2xl border border-[#EEEBE6]">
@@ -36,13 +36,13 @@ export default function HeritageStory() {
           </div>
 
           {/* Text narrative */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#EEEBE6] text-xs font-semibold uppercase tracking-widest text-[#C5A880]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Artisanal Heritage · Provençal Alchemy</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#111111] leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#111111] leading-[1.2]">
               Born in Grasse. Bottled for Discerning Connoisseurs.
             </h2>
 

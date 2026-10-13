@@ -52,10 +52,10 @@ export default function CartDrawer() {
         onClick={() => setIsCartDrawerOpen(false)}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col animate-slide-in-right">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-full sm:max-w-md bg-white shadow-2xl flex flex-col animate-slide-in-right">
           {/* Header */}
-          <div className="p-5 border-b border-[#EEEBE6] flex items-center justify-between bg-[#FAF8F5]">
+          <div className="p-4 sm:p-5 border-b border-[#EEEBE6] flex items-center justify-between bg-[#FAF8F5]">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-[#4A0E17]" />
               <h2 className="text-lg font-serif tracking-wide text-[#4A0E17]">

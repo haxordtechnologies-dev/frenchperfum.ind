@@ -31,7 +31,7 @@ export default function QuickViewModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-3 sm:p-6">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-black/65 backdrop-blur-xs transition-opacity"
@@ -39,11 +39,11 @@ export default function QuickViewModal() {
       />
 
       {/* Modal Dialog */}
-      <div className="relative bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl z-10 animate-fade-in border border-[#EEEBE6]">
+      <div className="relative bg-white rounded-2xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl z-10 animate-fade-in border border-[#EEEBE6]">
         {/* Close Button */}
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/80 hover:bg-white text-gray-700 hover:text-black shadow-sm transition-all"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full bg-white/80 hover:bg-white text-gray-700 hover:text-black shadow-sm transition-all"
           aria-label="Close"
         >
           <X className="w-5 h-5" />
@@ -51,8 +51,8 @@ export default function QuickViewModal() {
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Product Image */}
-          <div className="relative bg-[#F8F6F2] p-8 flex items-center justify-center min-h-[360px]">
-            <div className="relative w-full h-80 rounded-xl overflow-hidden shadow-inner">
+          <div className="relative bg-[#F8F6F2] p-4 sm:p-8 flex items-center justify-center min-h-[240px] sm:min-h-[360px]">
+            <div className="relative w-full h-56 sm:h-80 rounded-xl overflow-hidden shadow-inner">
               <Image
                 src={quickViewProduct.thumbnail || quickViewProduct.images[0]}
                 alt={quickViewProduct.name}
@@ -62,14 +62,14 @@ export default function QuickViewModal() {
               />
             </div>
             {quickViewProduct.badge && (
-              <span className="absolute top-6 left-6 px-3 py-1 bg-[#111111] text-[#FAF8F5] text-[11px] font-medium tracking-wider uppercase rounded-full shadow-md">
+              <span className="absolute top-4 left-4 sm:top-6 sm:left-6 px-2.5 sm:px-3 py-1 bg-[#111111] text-[#FAF8F5] text-[10px] sm:text-[11px] font-medium tracking-wider uppercase rounded-full shadow-md">
                 {quickViewProduct.badge}
               </span>
             )}
           </div>
 
           {/* Details */}
-          <div className="p-6 md:p-8 flex flex-col justify-between">
+          <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
                 <span className="uppercase tracking-widest text-[#C5A880] font-medium">

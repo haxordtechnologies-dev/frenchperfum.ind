@@ -115,13 +115,13 @@ function ShopContent() {
         </div>
 
         {/* Catalog Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-6 sm:pt-8">
           {/* Top Control Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#EEEBE6] gap-4">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 sm:pb-6 border-b border-[#EEEBE6] gap-3 sm:gap-4">
+            <div className="flex items-center justify-between sm:justify-start gap-3">
               <button
                 onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-                className="lg:hidden inline-flex items-center gap-2 px-4 py-2 border border-[#EEEBE6] rounded-lg text-xs font-medium text-black bg-[#FAF8F5]"
+                className="lg:hidden inline-flex items-center gap-1.5 px-3 py-2 border border-[#EEEBE6] rounded-lg text-xs font-medium text-black bg-[#FAF8F5]"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5" />
                 <span>Filters</span>
@@ -132,35 +132,35 @@ function ShopContent() {
             </div>
 
             {/* Sort & Search */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
               <div className="relative flex-1 sm:w-60">
                 <input
                   type="text"
                   value={searchFilter}
                   onChange={(e) => setSearchFilter(e.target.value)}
                   placeholder="Filter by note or name..."
-                  className="w-full text-xs pl-8 pr-3 py-2 rounded-lg border border-[#EEEBE6] bg-[#FAF8F5] focus:outline-none focus:border-black"
+                  className="w-full text-xs pl-8 pr-7 py-2 rounded-lg border border-[#EEEBE6] bg-[#FAF8F5] focus:outline-none focus:border-black"
                 />
                 <Search className="w-3.5 h-3.5 text-gray-400 absolute left-2.5 top-2.5" />
                 {searchFilter && (
                   <button
                     onClick={() => setSearchFilter('')}
-                    className="absolute right-2.5 top-2 text-gray-400 hover:text-black"
+                    className="absolute right-2 top-2 text-gray-400 hover:text-black"
                   >
                     <X className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
 
-              <div className="relative flex items-center gap-1.5 shrink-0">
-                <ArrowUpDown className="w-3.5 h-3.5 text-gray-400" />
+              <div className="relative flex items-center gap-1 shrink-0">
+                <ArrowUpDown className="w-3.5 h-3.5 text-gray-400 hidden xs:inline" />
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
                   aria-label="Sort fragrances by"
-                  className="text-xs py-2 pl-2 pr-6 rounded-lg border border-[#EEEBE6] bg-[#FAF8F5] text-black font-medium focus:outline-none cursor-pointer"
+                  className="text-xs py-2 pl-2 pr-4 sm:pr-6 rounded-lg border border-[#EEEBE6] bg-[#FAF8F5] text-black font-medium focus:outline-none cursor-pointer max-w-[130px] xs:max-w-none truncate"
                 >
-                  <option value="featured">Sort: Featured</option>
+                  <option value="featured">Featured</option>
                   <option value="price-low">Price: Low to High</option>
                   <option value="price-high">Price: High to Low</option>
                   <option value="rating">Highest Rated</option>
@@ -385,7 +385,7 @@ function ShopContent() {
                   </button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
                   {filteredProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
