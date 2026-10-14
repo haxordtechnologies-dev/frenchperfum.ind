@@ -1,30 +1,33 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import ClientWrapper from '../components/ClientWrapper';
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
   display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'frenchperfume.ind — Haute Parfumerie Française | Luxury Fragrances',
+  title: 'French Perfume — Authentic Luxury Fragrance | Signature Scents',
   description:
-    'Experience artisanal French perfumery distilled in Grasse. Explore handcrafted extraits de parfum, woody ouds, romantic florals, and curated discovery coffrets.',
+    'Discover long-lasting signature fragrances crafted with nature-inspired French luxury. Explore Erba Gold, Bold Citrus, Elegance, Vanilla Rose, and curated discovery sets.',
   keywords:
-    'french perfume, luxury fragrance, extrait de parfum, grasse rose, santal imperial, oud royal, discovery set, unisex perfume',
+    'French Perfume, Erba Gold, Bold Citrus, Elegance, Vanilla Rose, luxury fragrance, signature scent, long lasting perfume, affordable luxury, extrait de parfum',
   openGraph: {
-    title: 'frenchperfume.ind — Haute Parfumerie Française',
-    description: 'Artisanal French fragrances distilled to perfection.',
-    siteName: 'frenchperfume.ind',
+    title: 'French Perfume — Authentic Luxury Fragrance',
+    description: 'A Signature Scent. An Unforgettable Impression.',
+    siteName: 'French Perfume',
+    images: [{ url: '/logo.jpeg' }],
   },
   icons: {
     icon: [
@@ -44,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-white text-[#111111] antialiased selection:bg-[#C5A880]/30 selection:text-black">
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-white text-[#101310] antialiased selection:bg-[#D5B85A]/30 selection:text-[#153B27]">
         <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
