@@ -23,20 +23,20 @@ export default function UserSignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5]">
+    <div className="min-h-screen flex flex-col bg-[#F7F4EC]/40">
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl border border-[#EEEBE6] shadow-xl space-y-8 animate-fade-in">
+        <div className="max-w-md w-full bg-white p-8 sm:p-10 rounded-3xl border border-[#E8E4DA] shadow-xl space-y-8 animate-fade-in">
           {/* Header */}
           <div className="text-center space-y-2">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#D84A26] font-semibold block">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#153B27] font-semibold block">
               Bienvenue au Club Privé
             </span>
-            <h1 className="text-3xl font-serif text-[#4A0E17] font-medium">
+            <h1 className="text-3xl font-serif text-[#101310] font-normal">
               Create Customer Account
             </h1>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-gray-500 font-light">
               Join our private salon to enjoy complimentary samples, early batch allocations, and live order tracking.
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function UserSignupPage() {
                   onChange={(e) => setName(e.target.value)}
                   required
                   placeholder="e.g. Antoine Delacroix"
-                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#EEEBE6] bg-[#FAF8F5] focus:outline-none focus:border-[#4A0E17] text-black"
+                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#E8E4DA] bg-[#F7F4EC]/60 focus:outline-none focus:border-[#153B27] text-black"
                 />
                 <User className="w-4 h-4 text-gray-400 absolute left-3 top-3.5" />
               </div>
@@ -71,7 +71,7 @@ export default function UserSignupPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="name@example.com"
-                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#EEEBE6] bg-[#FAF8F5] focus:outline-none focus:border-[#4A0E17] text-black"
+                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#E8E4DA] bg-[#F7F4EC]/60 focus:outline-none focus:border-[#153B27] text-black"
                 />
                 <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3.5" />
               </div>
@@ -88,7 +88,7 @@ export default function UserSignupPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Create a secure password"
-                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#EEEBE6] bg-[#FAF8F5] focus:outline-none focus:border-[#4A0E17] text-black"
+                  className="w-full text-xs pl-9 pr-3.5 py-3 rounded-xl border border-[#E8E4DA] bg-[#F7F4EC]/60 focus:outline-none focus:border-[#153B27] text-black"
                 />
                 <Lock className="w-4 h-4 text-gray-400 absolute left-3 top-3.5" />
               </div>
@@ -96,18 +96,17 @@ export default function UserSignupPage() {
 
             <button
               type="submit"
-              className="w-full py-3.5 px-4 bg-[#4A0E17] hover:bg-[#360910] text-white text-xs font-semibold tracking-widest uppercase rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-4 bg-[#153B27] hover:bg-[#0D2619] text-[#F7F4EC] text-xs font-semibold tracking-widest uppercase rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
             >
-              <span>Create Customer Account</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Create Account</span>
+              <ArrowRight className="w-4 h-4 text-[#D5B85A]" />
             </button>
           </form>
 
-          {/* Login link */}
-          <div className="text-center text-xs text-gray-500 pt-2 border-t border-[#EEEBE6]">
+          <div className="text-center text-xs text-gray-500">
             Already have an account?{' '}
-            <Link href="/login" className="font-semibold text-[#4A0E17] underline hover:text-[#D84A26]">
-              Sign In to Your Account
+            <Link href="/login" className="text-[#153B27] font-semibold hover:underline">
+              Sign In
             </Link>
           </div>
         </div>

@@ -1,19 +1,192 @@
 import { Product, Coupon, CustomerReview, BannerSlide, StoreSettings, Order } from '../types';
 
 export const initialStoreSettings: StoreSettings = {
-  storeName: "frenchperfume.ind",
-  tagline: "Haute Parfumerie Française — Distilled in Grasse, Crafted for Royalty",
+  storeName: "French Perfume",
+  tagline: "A Signature Scent. An Unforgettable Impression.",
   supportEmail: "concierge@frenchperfume.ind",
   supportPhone: "+91 98200 45890",
   currency: "INR",
   freeShippingThreshold: 999,
   standardShippingFee: 150,
   taxRatePercent: 0, // prices inclusive of GST
-  announcementText: "✨ Compliment de France: Free Discovery Vial with all orders above ₹999 | Use Code: FRENCHLUXE for 15% OFF",
+  announcementText: "✨ French Perfume: Complimentary Discovery Vial with orders above ₹999 | Code: FRENCHLUXE",
   showAnnouncement: true,
 };
 
 export const initialProducts: Product[] = [
+  {
+    id: "fp-erba-gold",
+    name: "Erba Gold",
+    frenchName: "Erba Gold Impérial",
+    brand: "frenchperfume.ind",
+    concentration: "Extrait de Parfum",
+    gender: "unisex",
+    category: "citrus-aromatic",
+    price: 3499,
+    originalPrice: 4899,
+    discountPercentage: 28,
+    rating: 4.97,
+    reviewCount: 218,
+    inStock: true,
+    stockQuantity: 55,
+    isBestSeller: true,
+    isFeatured: true,
+    badge: "Iconic Signature",
+    sizes: [
+      { size: "30 ml", price: 2299, originalPrice: 3199, inStock: true, sku: "FP-EG-30" },
+      { size: "50 ml", price: 3499, originalPrice: 4899, inStock: true, sku: "FP-EG-50" },
+      { size: "100 ml", price: 5999, originalPrice: 7899, inStock: true, sku: "FP-EG-100" }
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=1000"
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=600",
+    tagline: "A golden symphony of sun-ripened Mediterranean citrus and velvety amber.",
+    description: "Erba Gold is an intoxicating signature blend of sunny Calabrian bergamot, Sicilian lemon, and succulent fruits cascading into an opulent heart of warm amber, white musk, and Madagascar bourbon vanilla. Pure affordable luxury formulated for all-day projection.",
+    story: "Composed under the warm Mediterranean sun, fusing rare Italian citrus essences with pure Parisian amber to craft an unforgettable signature sillage.",
+    notes: {
+      top: ["Calabrian Bergamot", "Sicilian Lemon", "Sun-Drenched Mandarin"],
+      heart: ["Mediterranean Fruits Basket", "Spiced Cardamom", "Ginger Spark"],
+      base: ["Baltic Amber", "Madagascar Bourbon Vanilla", "White Musk"]
+    },
+    olfactoryFamily: "Luminous Citrus Amber & Solar Fruits",
+    longevity: "16+ Hours",
+    sillage: "Enveloping & Radiant",
+    season: ["Spring", "Summer", "All Year"],
+    ingredients: "Alcohol Denat., Parfum (Fragrance), Aqua (Water), Limonene, Linalool, Citral, Coumarin, Geraniol.",
+    active: true
+  },
+  {
+    id: "fp-bold-citrus",
+    name: "Bold Citrus",
+    frenchName: "Agrumes Audacieux de Grasse",
+    brand: "frenchperfume.ind",
+    concentration: "Extrait de Parfum",
+    gender: "men",
+    category: "citrus-aromatic",
+    price: 3299,
+    originalPrice: 4499,
+    discountPercentage: 26,
+    rating: 4.92,
+    reviewCount: 147,
+    inStock: true,
+    stockQuantity: 42,
+    isBestSeller: true,
+    isFeatured: true,
+    badge: "Bestseller",
+    sizes: [
+      { size: "30 ml", price: 2199, originalPrice: 2999, inStock: true, sku: "FP-BC-30" },
+      { size: "50 ml", price: 3299, originalPrice: 4499, inStock: true, sku: "FP-BC-50" },
+      { size: "100 ml", price: 5699, originalPrice: 7499, inStock: true, sku: "FP-BC-100" }
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=1000"
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&q=80&w=600",
+    tagline: "Electrifying blood orange and pink grapefruit anchored by smoky Haitian vetiver.",
+    description: "Bold Citrus delivers an instant surge of commanding vitality. Sparkling citron zest and crushed pink peppercorn open with crisp drama before settling into a distinguished drydown of Haitian vetiver, cedar, and smoky ambergris.",
+    story: "Designed for the modern gentleman who commands the room with effortless poise, leaving a wake of fresh distinction.",
+    notes: {
+      top: ["Blood Orange", "Pink Grapefruit", "Crushed Juniper Berry"],
+      heart: ["Fresh Mint Leaves", "French Geranium", "Pink Peppercorn"],
+      base: ["Haitian Vetiver", "Virginian Cedarwood", "Ambergris Accord"]
+    },
+    olfactoryFamily: "Crisp Citrus & Smoky Woody Aromatic",
+    longevity: "14+ Hours",
+    sillage: "Commanding & Sharp",
+    season: ["Spring", "Summer", "Office & Evening"],
+    ingredients: "Alcohol Denat., Aqua (Water), Parfum (Fragrance), Limonene, Citral, Linalool, Alpha-Isomethyl Ionone.",
+    active: true
+  },
+  {
+    id: "fp-elegance",
+    name: "Elegance",
+    frenchName: "Élégance Suprême",
+    brand: "frenchperfume.ind",
+    concentration: "Extrait de Parfum",
+    gender: "women",
+    category: "floral-fresh",
+    price: 3699,
+    originalPrice: 4999,
+    discountPercentage: 26,
+    rating: 4.95,
+    reviewCount: 162,
+    inStock: true,
+    stockQuantity: 36,
+    isBestSeller: true,
+    isFeatured: true,
+    badge: "Haute Luxe",
+    sizes: [
+      { size: "30 ml", price: 2399, originalPrice: 3299, inStock: true, sku: "FP-EL-30" },
+      { size: "50 ml", price: 3699, originalPrice: 4999, inStock: true, sku: "FP-EL-50" },
+      { size: "100 ml", price: 6299, originalPrice: 8299, inStock: true, sku: "FP-EL-100" }
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=1000"
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600",
+    tagline: "Aristocratic French neroli and velvet iris layered with warm cashmere musks.",
+    description: "Elegance epitomizes the timeless sophistication of French haute perfumery. Dew-kissed orange blossom and Grasse jasmine weave around powdery Parisian iris root and soft creamy sandalwood for an aura of regal poise.",
+    story: "Created to celebrate graceful presence and feminine majesty, bottled in our classic gold-finished flacon.",
+    notes: {
+      top: ["Riviera Neroli", "White Peach", "Mandarin Blossom"],
+      heart: ["Grasse Jasmine Sambac", "French Iris Butter", "White Magnolia"],
+      base: ["Cashmere Musk", "Mysore Sandalwood", "Golden Amber"]
+    },
+    olfactoryFamily: "Velvet Floral & Powdery Cashmere",
+    longevity: "15+ Hours",
+    sillage: "Graceful & Hypnotic",
+    season: ["All Seasons", "Special Occasions"],
+    ingredients: "Alcohol Denat., Parfum, Geraniol, Citronellol, Eugenol, Benzyl Salicylate, Farnesol.",
+    active: true
+  },
+  {
+    id: "fp-vanilla-rose",
+    name: "Vanilla Rose",
+    frenchName: "Rose Vanillée de Grasse",
+    brand: "frenchperfume.ind",
+    concentration: "Extrait de Parfum",
+    gender: "women",
+    category: "gourmand",
+    price: 3599,
+    originalPrice: 4799,
+    discountPercentage: 25,
+    rating: 4.94,
+    reviewCount: 139,
+    inStock: true,
+    stockQuantity: 30,
+    isBestSeller: true,
+    isFeatured: true,
+    badge: "Trending",
+    sizes: [
+      { size: "30 ml", price: 2299, originalPrice: 2999, inStock: true, sku: "FP-VR-30" },
+      { size: "50 ml", price: 3599, originalPrice: 4799, inStock: true, sku: "FP-VR-50" },
+      { size: "100 ml", price: 6199, originalPrice: 7799, inStock: true, sku: "FP-VR-100" }
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=1000",
+      "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&q=80&w=1000"
+    ],
+    thumbnail: "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=600",
+    tagline: "Velvety Centifolia rose petals steeped in rich Madagascar bourbon vanilla.",
+    description: "A decadent, addictive gourmand floral. Fresh morning May Rose is delicately caramelized with smoked Bourbon vanilla, roasted almond praline, and seductive white musk. Intensely romantic with legendary staying power.",
+    story: "Hand-picked roses from Provençal fields swirled with aged vanilla beans in copper alembics.",
+    notes: {
+      top: ["Morning Dew Water", "Sweet Lemon", "Crushed Rose Petals"],
+      heart: ["Grasse Centifolia Rose", "Turkish Rose Absolute", "Almond Praline"],
+      base: ["Bourbon Vanilla Pod", "White Musk", "Cedarwood"]
+    },
+    olfactoryFamily: "Gourmand Floral & Sweet Amber",
+    longevity: "16+ Hours",
+    sillage: "Irresistible & Sweet",
+    season: ["Autumn", "Winter", "Evenings"],
+    ingredients: "Alcohol Denat., Parfum (Fragrance), Vanillin, Geraniol, Citronellol, Coumarin.",
+    active: true
+  },
   {
     id: "fp-01",
     name: "Santal Impérial",

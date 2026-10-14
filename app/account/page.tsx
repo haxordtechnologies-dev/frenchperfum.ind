@@ -12,7 +12,6 @@ import {
   MapPin,
   Heart,
   LogOut,
-  ShieldAlert,
   Sparkles,
   Clock,
   CheckCircle,
@@ -31,14 +30,14 @@ export default function AccountPage() {
       <div className="min-h-screen flex flex-col bg-white">
         <Navbar />
         <main className="flex-1 flex items-center justify-center p-6">
-          <div className="text-center max-w-sm bg-[#FAF8F5] p-8 rounded-2xl border border-[#EEEBE6]">
-            <h2 className="text-xl font-serif text-black mb-2">Please Sign In</h2>
-            <p className="text-xs text-gray-500 mb-6">
+          <div className="text-center max-w-sm bg-[#F7F4EC] p-8 rounded-3xl border border-[#E8E4DA]">
+            <h2 className="text-xl font-serif text-black mb-2 font-normal">Please Sign In</h2>
+            <p className="text-xs text-gray-500 mb-6 font-light">
               You must be logged in to view your orders and personal profile.
             </p>
             <Link
-              href="/account/login"
-              className="px-6 py-2.5 bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-lg inline-block"
+              href="/login"
+              className="px-6 py-2.5 bg-[#153B27] text-white text-xs font-semibold uppercase tracking-wider rounded-xl inline-block hover:bg-[#0D2619] transition-colors"
             >
               Go to Sign In
             </Link>
@@ -50,24 +49,24 @@ export default function AccountPage() {
   }
 
   // Filter orders for this user
-  const userOrders = orders; // show all or user orders for paired testing
+  const userOrders = orders;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5]">
+    <div className="min-h-screen flex flex-col bg-[#F7F4EC]/40">
       <Navbar />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
         {/* Profile Header */}
-        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#EEEBE6] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8E4DA] shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-[#111111] text-[#FAF8F5] font-serif text-2xl flex items-center justify-center shadow-md">
+            <div className="w-16 h-16 rounded-full bg-[#153B27] text-[#D5B85A] font-serif text-2xl flex items-center justify-center shadow-md border border-[#D5B85A]/40">
               {currentUser.name.charAt(0)}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-serif text-black font-medium">{currentUser.name}</h1>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#E6F4EA] text-[#1E7B3A] text-[10px] font-semibold uppercase tracking-wider">
-                  Club Privé VIP
+                <h1 className="text-2xl font-serif text-black font-normal">{currentUser.name}</h1>
+                <span className="px-2.5 py-0.5 rounded-full bg-[#153B27]/10 text-[#153B27] text-[10px] font-semibold uppercase tracking-wider">
+                  Club Privé Patron
                 </span>
               </div>
               <p className="text-xs text-gray-500 mt-0.5">{currentUser.email}</p>
@@ -83,7 +82,7 @@ export default function AccountPage() {
                 logout();
                 router.push('/');
               }}
-              className="px-4 py-2.5 bg-white border border-gray-200 text-gray-700 hover:text-red-600 hover:border-red-200 text-xs font-semibold rounded-xl transition-colors flex items-center gap-1.5 shadow-xs"
+              className="px-4 py-2.5 bg-white border border-[#E8E4DA] text-gray-700 hover:text-red-600 hover:border-red-200 text-xs font-semibold rounded-xl transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>Sign Out</span>
@@ -91,14 +90,14 @@ export default function AccountPage() {
           </div>
         </div>
 
-        {/* Tab Controls (Horizontally Scrollable on Mobile) */}
-        <div className="flex gap-2 border-b border-[#EEEBE6] pb-3 sm:pb-4 mb-6 sm:mb-8 overflow-x-auto scrollbar-none">
+        {/* Tab Controls */}
+        <div className="flex gap-2 border-b border-[#E8E4DA] pb-3 sm:pb-4 mb-6 sm:mb-8 overflow-x-auto scrollbar-none">
           <button
             onClick={() => setActiveTab('orders')}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
               activeTab === 'orders'
-                ? 'bg-black text-white shadow-xs'
-                : 'bg-white text-gray-600 hover:text-black border border-[#EEEBE6]'
+                ? 'bg-[#153B27] text-[#D5B85A] shadow-xs'
+                : 'bg-white text-gray-600 hover:text-black border border-[#E8E4DA]'
             }`}
           >
             <Package className="w-4 h-4" />
@@ -109,8 +108,8 @@ export default function AccountPage() {
             onClick={() => setActiveTab('addresses')}
             className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
               activeTab === 'addresses'
-                ? 'bg-black text-white shadow-xs'
-                : 'bg-white text-gray-600 hover:text-black border border-[#EEEBE6]'
+                ? 'bg-[#153B27] text-[#D5B85A] shadow-xs'
+                : 'bg-white text-gray-600 hover:text-black border border-[#E8E4DA]'
             }`}
           >
             <MapPin className="w-4 h-4" />
@@ -119,9 +118,9 @@ export default function AccountPage() {
 
           <Link
             href="/wishlist"
-            className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:text-black border border-[#EEEBE6] transition-all flex items-center gap-2 shrink-0"
+            className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:text-black border border-[#E8E4DA] transition-all flex items-center gap-2 shrink-0"
           >
-            <Heart className="w-4 h-4 text-red-500" />
+            <Heart className="w-4 h-4 text-[#153B27]" />
             <span>Saved Fragrances ({wishlist.length})</span>
           </Link>
         </div>
@@ -130,84 +129,85 @@ export default function AccountPage() {
         {activeTab === 'orders' && (
           <div className="space-y-6">
             {userOrders.length === 0 ? (
-              <div className="text-center py-16 bg-white rounded-3xl border border-[#EEEBE6] p-8">
+              <div className="text-center py-16 bg-white rounded-3xl border border-[#E8E4DA] p-8">
                 <Package className="w-10 h-10 text-gray-400 mx-auto mb-2" />
-                <h3 className="font-serif text-lg text-black">No past orders found</h3>
-                <p className="text-xs text-gray-500 mb-4">Start your journey with our signature fragrances.</p>
+                <h3 className="font-serif text-lg text-black font-normal">No past orders found</h3>
+                <p className="text-xs text-gray-500 mb-4 font-light">Start your journey with our signature fragrances.</p>
                 <Link
                   href="/shop"
-                  className="px-6 py-2.5 bg-black text-white text-xs font-semibold uppercase tracking-wider rounded-lg inline-block"
+                  className="px-6 py-2.5 bg-[#153B27] text-white text-xs font-semibold uppercase tracking-wider rounded-xl inline-block hover:bg-[#0D2619] transition-colors"
                 >
-                  Explore Catalog
+                  Explore Fragrances
                 </Link>
               </div>
             ) : (
               userOrders.map((ord) => (
                 <div
                   key={ord.id}
-                  className="bg-white rounded-3xl border border-[#EEEBE6] overflow-hidden shadow-xs hover:border-gray-300 transition-colors"
+                  className="bg-white rounded-3xl border border-[#E8E4DA] overflow-hidden shadow-xs hover:border-[#D5B85A] transition-colors"
                 >
-                  {/* Order Top Bar */}
-                  <div className="p-5 sm:p-6 bg-[#FAF8F5] border-b border-[#EEEBE6] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="p-4 sm:p-6 bg-[#F7F4EC] border-b border-[#E8E4DA] flex flex-wrap items-center justify-between gap-4 text-xs">
                     <div>
-                      <div className="flex items-center gap-3">
-                        <span className="font-mono font-bold text-sm text-black">
-                          {ord.orderNumber}
-                        </span>
-                        <span
-                          className={`px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider ${
-                            ord.orderStatus === 'Delivered'
-                              ? 'bg-[#E6F4EA] text-[#1E7B3A]'
-                              : ord.orderStatus === 'Out for Delivery'
-                              ? 'bg-amber-100 text-amber-800'
-                              : 'bg-blue-100 text-blue-800'
-                          }`}
-                        >
-                          {ord.orderStatus}
-                        </span>
-                      </div>
-                      <p className="text-[11px] text-gray-400 mt-1 font-mono" suppressHydrationWarning>
-                        Placed on {formatDate(ord.date)} · Waybill: {ord.trackingNumber || 'EXP-DELHI-001'}
-                      </p>
+                      <span className="text-gray-400 block text-[10px] uppercase font-mono">Order Number</span>
+                      <strong className="text-[#153B27] font-mono text-sm">{ord.orderNumber}</strong>
                     </div>
-
-                    <div className="flex items-center gap-4">
-                      <div className="text-right">
-                        <span className="text-xs text-gray-400 block">Total Billed</span>
-                        <span className="text-base font-semibold text-black">
-                          ₹{ord.total.toLocaleString('en-IN')}
-                        </span>
-                      </div>
-                      <Link
-                        href={`/order-success/${ord.id}`}
-                        className="px-3.5 py-2 bg-white border border-[#EEEBE6] hover:bg-gray-50 rounded-xl text-xs font-semibold text-black transition-colors"
-                      >
-                        Details
-                      </Link>
+                    <div>
+                      <span className="text-gray-400 block text-[10px] uppercase font-mono">Date Placed</span>
+                      <span className="text-gray-800">{formatDate(ord.date)}</span>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 block text-[10px] uppercase font-mono">Total Value</span>
+                      <strong className="text-[#153B27] text-sm">₹{ord.total.toLocaleString('en-IN')}</strong>
+                    </div>
+                    <div>
+                      <span className="text-gray-400 block text-[10px] uppercase font-mono">Status</span>
+                      <span className="inline-flex items-center gap-1 font-semibold text-[#153B27] bg-white px-2.5 py-0.5 rounded-full border border-[#E8E4DA]">
+                        <Clock className="w-3 h-3 text-[#D5B85A]" />
+                        <span>{ord.orderStatus}</span>
+                      </span>
                     </div>
                   </div>
 
-                  {/* Items list */}
-                  <div className="p-5 sm:p-6 divide-y divide-gray-100">
-                    {ord.items.map((it, idx) => (
-                      <div key={idx} className="py-3 flex items-center justify-between gap-4">
-                        <div className="flex items-center gap-3.5">
-                          <div className="relative w-14 h-16 bg-[#FAF8F5] rounded-lg overflow-hidden border border-[#EEEBE6] shrink-0">
-                            <Image src={it.image} alt={it.name} fill className="object-cover" sizes="60px" />
+                  <div className="p-4 sm:p-6 divide-y divide-gray-100">
+                    {ord.items.map((item) => (
+                      <div key={item.productId} className="py-3 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <div className="relative w-12 h-14 bg-[#F7F4EC] rounded-lg overflow-hidden border border-[#E8E4DA] shrink-0">
+                            <Image
+                              src={item.image}
+                              alt={item.name}
+                              fill
+                              className="object-cover"
+                              sizes="48px"
+                            />
                           </div>
                           <div>
-                            <h4 className="font-serif text-sm font-medium text-black">{it.name}</h4>
-                            <p className="text-xs text-gray-500 italic">{it.frenchName}</p>
-                            <span className="text-[11px] text-gray-400 font-mono">
-                              {it.selectedSize} · Quantity: {it.quantity}
+                            <Link href={`/product/${item.productId}`} className="text-xs font-serif font-medium text-black hover:text-[#153B27]">
+                              {item.name}
+                            </Link>
+                            <span className="text-[10px] text-gray-400 block font-mono">
+                              {item.selectedSize} · Qty: {item.quantity}
                             </span>
                           </div>
                         </div>
-                        <span className="text-xs font-semibold text-black">
-                          ₹{(it.price * it.quantity).toLocaleString('en-IN')}
+                        <span className="text-xs font-semibold text-[#153B27]">
+                          ₹{(item.price * item.quantity).toLocaleString('en-IN')}
                         </span>
                       </div>
                     ))}
+                  </div>
+
+                  <div className="p-4 bg-gray-50/50 border-t border-[#E8E4DA] flex items-center justify-between text-xs">
+                    <span className="text-gray-500 font-mono text-[11px]">
+                      Tracking: {ord.trackingNumber || 'EXP-IN-90812'}
+                    </span>
+                    <Link
+                      href={`/order-success/${ord.id}`}
+                      className="text-[#153B27] hover:underline font-semibold flex items-center gap-1"
+                    >
+                      <span>View Receipt &amp; Live Tracker</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-[#D5B85A]" />
+                    </Link>
                   </div>
                 </div>
               ))
@@ -221,28 +221,21 @@ export default function AccountPage() {
             {currentUser.addresses.map((addr) => (
               <div
                 key={addr.id}
-                className="bg-white p-6 rounded-3xl border border-[#EEEBE6] shadow-xs relative"
+                className="bg-white p-6 rounded-3xl border border-[#E8E4DA] relative shadow-xs"
               >
-                <div className="flex justify-between items-start mb-3">
-                  <span className="px-2 py-0.5 rounded bg-[#FAF8F5] border border-[#EEEBE6] text-[10px] uppercase font-bold tracking-wider text-black">
-                    Primary Residence
+                {addr.isDefault && (
+                  <span className="absolute top-4 right-4 px-2 py-0.5 rounded-full bg-[#153B27]/10 text-[#153B27] text-[10px] font-semibold uppercase tracking-wider">
+                    Default Shipping
                   </span>
-                  <span className="text-xs text-[#1E7B3A] font-semibold">Default</span>
-                </div>
-                <h4 className="font-semibold text-sm text-black mb-1">{addr.fullName}</h4>
-                <p className="text-xs text-gray-600 leading-relaxed mb-2">{addr.street}</p>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                )}
+                <h4 className="font-serif text-base font-medium text-black mb-1">{addr.fullName}</h4>
+                <p className="text-xs text-gray-600 leading-relaxed font-light">{addr.street}</p>
+                <p className="text-xs text-gray-600 font-light">
                   {addr.city}, {addr.state} - {addr.pincode}
                 </p>
                 <p className="text-xs text-gray-400 mt-2 font-mono">Phone: {addr.phone}</p>
               </div>
             ))}
-
-            <div className="border-2 border-dashed border-[#EEEBE6] rounded-3xl p-6 flex flex-col items-center justify-center text-center hover:border-black transition-colors bg-white/50 cursor-pointer min-h-[160px]">
-              <Plus className="w-6 h-6 text-gray-400 mb-2" />
-              <span className="text-xs font-semibold text-black">Add Secondary Address</span>
-              <span className="text-[10px] text-gray-400 mt-0.5">Office, Vacation Villa or Gifting</span>
-            </div>
           </div>
         )}
       </main>

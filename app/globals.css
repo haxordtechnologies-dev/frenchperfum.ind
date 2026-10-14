@@ -2,16 +2,33 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #1a1a1a;
-    --brand-wine: #4a0e17;
-    --brand-wine-dark: #360910;
-    --brand-wine-hover: #5d141f;
-    --brand-wine-light: #fdf7f7;
-    --brand-accent-orange: #d84a26;
-    --brand-accent-orange-hover: #bf3e1d;
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --background: #FFFFFF;
+    --foreground: #101310;
+
+    /* French Perfume Official Luxury Palette */
+    --brand-forest: #153B27;
+    --brand-forest-dark: #0D2619;
+    --brand-forest-light: #1E4E34;
+    --brand-forest-translucent: rgba(21, 59, 39, 0.95);
+    
+    --brand-gold: #D5B85A;
+    --brand-gold-hover: #C5A543;
+    --brand-gold-light: #F7EFC9;
+    --brand-gold-muted: rgba(213, 184, 90, 0.15);
+
+    --brand-charcoal: #101310;
+    --brand-charcoal-light: #1A1F1A;
+
+    --brand-ivory: #F7F4EC;
+    --brand-ivory-dark: #EFE9DC;
+
+    --brand-sage: #89977B;
+    --brand-sage-light: #EDF1E8;
+
+    --brand-white: #FFFFFF;
+
+    --font-serif: var(--font-cormorant), 'Cormorant Garamond', Garamond, Georgia, serif;
+    --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   body {
@@ -22,9 +39,60 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, .font-serif {
+  h1, h2, h3, h4, .font-serif {
     font-family: var(--font-serif);
   }
+}
+
+/* Custom Luxury Brand Helpers */
+.bg-forest {
+  background-color: #153B27;
+}
+.bg-forest-dark {
+  background-color: #0D2619;
+}
+.text-forest {
+  color: #153B27;
+}
+.border-forest {
+  border-color: #153B27;
+}
+
+.bg-gold {
+  background-color: #D5B85A;
+}
+.text-gold {
+  color: #D5B85A;
+}
+.border-gold {
+  border-color: #D5B85A;
+}
+
+.bg-charcoal {
+  background-color: #101310;
+}
+.text-charcoal {
+  color: #101310;
+}
+
+.bg-ivory {
+  background-color: #F7F4EC;
+}
+.text-ivory {
+  color: #F7F4EC;
+}
+.border-ivory {
+  border-color: #E8E3D5;
+}
+
+.bg-sage {
+  background-color: #89977B;
+}
+.text-sage {
+  color: #89977B;
+}
+.border-sage {
+  border-color: #89977B;
 }
 
 /* Custom luxury animation classes */
@@ -52,14 +120,14 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f7f7f7;
+  background: #F7F4EC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4cfc7;
+  background: #D5B85A;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a9a296;
+  background: #B89938;
 }
 
 /* Hide scrollbar for clean horizontal snap carousels */
